@@ -5,13 +5,6 @@ import logger from '../../util/logger';
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
 
-axiosRetry(axios, {
-    retries: 3,
-    retryDelay: count => {
-        return count**2 * 1000
-    },
-})
-
 export const chargeByCompany = ({
   chargeRequest,
   merchantIdentifier,
