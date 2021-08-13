@@ -4,6 +4,7 @@ import helmet from 'helmet';
 
 import healthcheckRouteRoute from './routes/healthcheck.route';
 import chargeRouteRoute from './routes/charge.route';
+import chargeStatusesRouteRoute from './routes/chargeStatuses.route';
 
 import config from './config';
 import { NextFunction, Request, Response } from 'express-serve-static-core';
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
  */
 app.use('/healthcheck', healthcheckRouteRoute);
 app.use('/api/charge', chargeRouteRoute)
+app.use('/api/chargeStatuses', chargeStatusesRouteRoute)
 
 
 

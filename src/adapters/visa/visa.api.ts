@@ -24,7 +24,7 @@ export const ChargeVisa = ({
     }).then(resp => {
       return {
         success: resp.data.chargeResult === 'Success',
-        error: resp.data.resultReason,
+        error: resp.data.resultReason || undefined,
       }
     })
 } 

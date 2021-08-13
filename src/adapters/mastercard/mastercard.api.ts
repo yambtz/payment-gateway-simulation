@@ -27,13 +27,12 @@ axiosClient: AxiosInstance
     }
   ).then(resp => ({success: true}))
     .catch(errorResponse => {
-      if(errorResponse.response?.status === 400) {
+      if (errorResponse.response?.status === 400) {
         return {
           success: false,
           error: errorResponse.response?.data?.decline_reason,
         }
       } else {
-        logger.error(errorResponse.response)
         throw errorResponse
       }
     })
